@@ -2,25 +2,26 @@ const express = require('express');
 
 const app = express();
 
+const bodyParser = require('body-parser');
+
 require('dotenv').config();
 
 const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
 
+app.use(bodyParser.json());
+
+const appRouter = require('./routes/index');
+
 const PORT = process.env.PORT;
-
-async function addUser() {
-  const test = await prisma.user.create({
-    data: {
-      email: 'sam@gmail.com',
-      password: '8372638',
-    },
+app.get('/', (req, res, next) => {
+  res.json({
+    message: 'hello wecome to my todo app',
   });
-  console.log(test);
-}
+});
 
-addUser();
+app.use(appRouter);
 
 app.listen(PORT, () => {
   console.log(`Server runing on ${PORT}`);
