@@ -2,11 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const check = require('../validation/auth');
-
 const user = require('../controllers/user');
-
-
 
 router.get('/', user.getUsers);
 router.get('/:id', user.singleUser);

@@ -16,10 +16,8 @@ const login = async (req, res, next) => {
       res.status(422).json({
         message: 'invalid password',
       });
-
-    }
-    else{
-      const token = signToken(users.id)
+    } else {
+      const token = signToken(users.id);
     }
   } catch (error) {}
 };
@@ -41,11 +39,7 @@ const saveUser = async (req, res, next) => {
 
 const getUsers = async (req, res, next) => {
   try {
-    const user = await prisma.user.findMany({
-      include: {
-        tasks: true,
-      },
-    });
+    const user = await prisma.user.findMany({});
     res.status(200).json({
       user,
     });
