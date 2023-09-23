@@ -14,6 +14,7 @@ const saveTask = async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
+  next();
 };
 
 const getTasks = async (req, res, next) => {
@@ -29,6 +30,7 @@ const getTasks = async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
+  next();
 };
 
 const singleTask = async (req, res, next) => {
@@ -48,6 +50,7 @@ const singleTask = async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
+  next();
 };
 
 const removeTask = async (req, res, next) => {
@@ -64,6 +67,7 @@ const removeTask = async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
+  next();
 };
 
 const updateTask = async (req, res, next) => {
@@ -82,6 +86,7 @@ const updateTask = async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
+  next();
 };
 
 module.exports = {

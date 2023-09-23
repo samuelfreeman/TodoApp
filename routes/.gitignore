@@ -1,0 +1,30 @@
+use this url = https://todoapp-18z4.onrender.com
+
+
+
+
+============== user endpoints ===============
+# use url/user/ and "get" to get list of users
+
+# use url/user/:id and "get" to get a single user with the user's "id" inside the params
+
+# use url/user/ and  "post"  to add a user 
+
+# use url/user/:id and get to "patch" to update a  user with the user's "id" inside the params
+
+# use url/user/:id and "delete" to delete  a user with the  user's "id" inside the params
+
+
+
+
+================== task endpoints=============
+# use url/task/ and "get" to get list of tasks
+
+# use url/task/:id and "get" to get a single task with the task's "id" inside the params
+
+# use url/task/ and  "post"  to add a task 
+
+# use url/task/:id and get to "patch" to update a  task with the task's "id" inside the params
+
+# use url/task/:id and "delete" to delete  a task with the  task's "id" inside the params
+
