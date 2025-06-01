@@ -1,4 +1,4 @@
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
@@ -14,7 +14,7 @@ const login = async (req, res, next) => {
     });
     if (!users) {
       res.status(422).json({
-        message: 'invalid password',
+        message: "invalid password",
       });
     } else {
       const token = signToken(users.id);
@@ -76,7 +76,7 @@ const removeUser = async (req, res, next) => {
       },
     });
     res.status(404).json({
-      message: 'User has been deleted',
+      message: "User has been deleted",
     });
   } catch (error) {
     console.log(error);

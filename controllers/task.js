@@ -1,4 +1,4 @@
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
@@ -12,7 +12,9 @@ const saveTask = async (req, res, next) => {
       task,
     });
   } catch (error) {
-    console.log(error);
+     res.status(500).json({
+      message: error.message,
+    })
   }
   next();
 };
@@ -29,6 +31,9 @@ const getTasks = async (req, res, next) => {
     });
   } catch (error) {
     console.log(error);
+    res.status(500).json({
+      message: error.message,
+    });
   }
   next();
 };
@@ -48,7 +53,9 @@ const singleTask = async (req, res, next) => {
       task,
     });
   } catch (error) {
-    console.log(error);
+    res.status(500).json({
+      message: error.message,
+    });
   }
   next();
 };
@@ -62,10 +69,12 @@ const removeTask = async (req, res, next) => {
       },
     });
     res.status(404).json({
-      message: 'task has been deleted',
+      message: "task has been deleted",
     });
   } catch (error) {
-    console.log(error);
+    res.status(500).json({
+      message: error.message,
+    });
   }
   next();
 };
@@ -84,7 +93,9 @@ const updateTask = async (req, res, next) => {
       task,
     });
   } catch (error) {
-    console.log(error);
+    res.status(500).json({
+      message: error.message,
+    });
   }
   next();
 };

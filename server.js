@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 const appRouter = require('./routes/index');
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 app.get('/', (req, res, next) => {
   res.json({
     message: 'hello wecome to my todo app',
